@@ -11,7 +11,6 @@ const App = () => {
   const [user, setUser] = useState(auth.currentUser);
   const [loading, setLoading] = useState(false);
 
-  // Fetch confessions with error handling
   const fetchConfessions = async () => {
     try {
       setLoading(true);
@@ -47,7 +46,7 @@ const App = () => {
     return unsubscribe;
   }, []);
 
-  // Add new confession with improved error handling
+
   const handleAddConfession = async () => {
     if (!newConfession.trim()) {
       Alert.alert('Error', 'Confession cannot be empty');
@@ -79,7 +78,7 @@ const App = () => {
     }
   };
 
-  // Update confession with proper error handling
+
   const handleUpdateConfession = async () => {
     if (!editingConfession?.id) return;
 
@@ -100,7 +99,7 @@ const App = () => {
     }
   };
 
-  // Delete confession with confirmation dialog
+
   const handleDeleteConfession = async (id: string) => {
     Alert.alert(
       'Delete Confession',
@@ -127,7 +126,6 @@ const App = () => {
     );
   };
 
-  // Sign in with Google
   const signInWithGoogle = async () => {
     try {
       setLoading(true);
@@ -141,7 +139,7 @@ const App = () => {
     }
   };
 
-  // Sign out
+
   const handleSignOut = async () => {
     try {
       setLoading(true);
@@ -241,7 +239,6 @@ const App = () => {
         />
       )}
 
-      {/* Edit Modal */}
       <Modal visible={!!editingConfession} animationType="slide">
         <View style={styles.modalContainer}>
           <Text style={styles.modalTitle}>Edit Confession</Text>
